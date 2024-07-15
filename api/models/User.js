@@ -34,7 +34,7 @@ module.exports = {
       type: 'string',
       required: true
     },
-    dob: {
+    courseCode: {
       type: 'string',
       required: true
     },
