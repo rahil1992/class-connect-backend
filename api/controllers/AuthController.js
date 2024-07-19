@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+  check: (req, res) => res.ok(),
   signUp: (req, res) => {
     User
       .create(req.body)
