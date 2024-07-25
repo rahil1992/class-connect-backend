@@ -1,5 +1,5 @@
 /**
- * User.js
+ * Profile.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,36 +8,48 @@
 module.exports = {
 
   attributes: {
-
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    firstName: {
-      type: 'string',
-      required: true
-    },
-    lastName: {
-      type: 'string',
-      required: true
-    },
-    email: {
-      type: 'string',
+    user: {
+      model: 'User',
       required: true,
       unique: true
     },
-    password: {
+    name: {
       type: 'string',
       required: true,
-      encrypt: true
     },
-    contactNumber: {
+    phone: {
       type: 'string',
-      required: true
+      required: true,
     },
-    verified: {
-      type: 'boolean',
-      defaultsTo: false
+    address: {
+      type: 'string',
+      required: true,
     },
+    city: {
+      type: 'string',
+      required: true,
+    },
+    state: {
+      type: 'string',
+      required: true,
+    },
+    zip: {
+      type: 'string',
+      required: true,
+    },
+    country: {
+      type: 'string',
+      required: true,
+    },
+    courseCode: {
+      type: 'string',
+      required: true,
+    },
+    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+
+
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
@@ -48,10 +60,6 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
-  customToJSON: function() {
-    // Return a shallow copy of this record with the password and ssn removed.
-    return _.omit(this, ['password'])
-  }
 
 };
 

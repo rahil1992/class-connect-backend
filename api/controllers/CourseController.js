@@ -33,6 +33,13 @@ module.exports = {
         if(!result) return res.badRequest('Invalid Course Code');
         return res.ok(result);
       })
+  },
+  getUsers: (req, res) => {
+    const {courseCode} = req.query;
+    Profile
+      .find({courseCode})
+      .then(result => res.ok(result))
+      .catch(err => res.badRequest(err));
   }
 };
 
