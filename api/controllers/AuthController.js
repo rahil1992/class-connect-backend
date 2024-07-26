@@ -49,9 +49,9 @@ module.exports = {
   updatePassword: (req, res) => {
     const {email, otp, password} = req.body;
     if(otp !== '123456') return res.unAuthorized('Invalid OTP');
+    if(!email) return res.badRequest('Email is required');
     User
-      .update({email})
-      .set({password})
+      .update({email},{password})
       .then(result => res.ok(result))
       .catch(err => res.badRequest(err));
   }
