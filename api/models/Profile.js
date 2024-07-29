@@ -21,6 +21,10 @@ module.exports = {
       type: 'string',
       required: true,
     },
+    email: {
+      type: 'string',
+      required: true,
+    },
     address: {
       type: 'string',
       required: true,
@@ -40,6 +44,10 @@ module.exports = {
     country: {
       type: 'string',
       required: true,
+    },
+    accommodation: {
+      type: 'boolean',
+      defaultsTo: false
     },
     courseCode: {
       type: 'string',
