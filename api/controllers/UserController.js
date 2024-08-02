@@ -21,11 +21,10 @@ module.exports = {
       .catch(err => res.serverError(err));
   },
   updatePublicProfile: (req, res) => {
-    const {id} = req.query;
     delete req.body.id;
-    console.log(req.body);
+    console.log(req.body)
     Profile
-      .update({id}, req.body)
+      .updateOne({user: req.body.user}, req.body)
       .fetch()
       .then(record => res.ok(record))
       .catch(err => res.serverError(err));
