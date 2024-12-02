@@ -24,10 +24,23 @@ module.exports = {
       .findOne({email})
       .decrypt()
       .then(async result => {
-        if(!result) return res.unAuthorized('User not found');
-        if(result.password !== password) return res.unAuthorized('Invalid Credentials');
-        result.token = await sails.helpers.issueToken.with({ payload: { id: result.id } });
-        return res.ok(result);
+        console.log("result", result);
+        if(!result) {
+          Provider.findOne({email})
+            .decrypt()
+            .then(async _result => {
+              console.log("_result", _result);
+              if(!_result) return res.notFound('User not found');
+              if(_result.password !== password) return res.unAuthorized('Invalid Credentials');
+              _result.token = await sails.helpers.issueToken.with({ payload: { id: _result.id } });
+              _result.isProvider = true;
+              return res.ok(_result);
+            })
+        } else {
+          if(result.password !== password) return res.unAuthorized('Invalid Credentials');
+          result.token = await sails.helpers.issueToken.with({ payload: { id: result.id } });
+          return res.ok(result);
+        }
       })
       .catch(err => res.badRequest(err));
   },

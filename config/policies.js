@@ -20,5 +20,14 @@ module.exports.policies = {
   '*': 'isAuthenticated',
   'auth': {
     '*': true
-  }
+  },
+  'admin': {
+    '*': true
+  },
+  'provider': {
+    '*': true
+  },
+  'property': {
+    '*': true
+  },
 };
