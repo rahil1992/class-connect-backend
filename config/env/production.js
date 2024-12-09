@@ -47,6 +47,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
+      adapter: 'sails-mongo',
+      url: 'mongodb://rahil1992:0DlgxcCJJgDOE9WJ@ac-qgc4igi-shard-00-00.y9reo2n.mongodb.net:27017,ac-qgc4igi-shard-00-01.y9reo2n.mongodb.net:27017,ac-qgc4igi-shard-00-02.y9reo2n.mongodb.net:27017/?replicaSet=atlas-ge8zso-shard-0&ssl=true&authSource=admin&appName=Animal-Backbone-Dev',
+
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
