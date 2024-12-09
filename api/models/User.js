@@ -20,7 +20,8 @@ module.exports = {
     },
     email: {
       type: 'string',
-      unique: true
+      unique: true,
+      required: true
     },
     password: {
       type: 'string',
