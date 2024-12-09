@@ -26,7 +26,7 @@ module.exports = {
     status: {
       type: 'string',
       defaultsTo: 'pending',
-      enum: ['pending', 'approved', 'rejected']
+      isIn: ['pending', 'approved', 'rejected']
     },
     address: {
       type: 'string',
