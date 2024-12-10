@@ -34,5 +34,10 @@ module.exports = {
     const provider = await Provider.updateOne({id}, {status: 'rejected'});
     return res.ok([provider]);
   },
+  privacyPolicy: (req, res) => {
+    return res.send(`
+
+    `);
+  }
 };
 
